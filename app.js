@@ -4,6 +4,7 @@
   const VIEWS = [
     ["goals", "Time to goals", window.Goals],
     ["shop", "Where to shop", window.Shopping],
+    ["fresh", "Price freshness", window.Freshness],
   ];
   const $ = (id) => document.getElementById(id);
   let current = "goals";

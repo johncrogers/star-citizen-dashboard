@@ -576,3 +576,9 @@ button.hbar-row.on { border-color: var(--accent); background: var(--panel-2); }
   .cost-head span:nth-child(2), .cost-head span:nth-child(4), .cost-row .hbar-track, .cost-row .cost-run { display: none; }
   .shop-bars .hbar-row { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 24px; }
 }
+
+/* ── Price freshness ───────────────────────── */
+.tile.old strong { color: var(--pledge); }
+tr.stale td:last-child { color: var(--pledge); }
+.hbar-val small { color: var(--muted); }
+.cmp-scroll { overflow-x: auto; }

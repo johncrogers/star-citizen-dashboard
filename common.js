@@ -82,9 +82,12 @@
     return out;
   }
 
-  // Compact shop rows ([locationIndex, price, date, "c"]) -> { location, code, price }.
+  // Compact shop rows ([locationIndex, price, YYMMDD, "c"]) -> { location, code, price, date }.
+  const longDate = (d) => (d ? `20${String(d).slice(0, 2)}-${String(d).slice(2, 4)}-${String(d).slice(4, 6)}` : null);
   const shopRows = (rows, locs, codes) =>
-    (rows || []).map((b) => (Array.isArray(b) ? { location: locs[b[0]], code: codes[b[0]] || null, price: b[1] } : { location: b.location, code: b.code || null, price: b.price }));
+    (rows || []).map((b) => (Array.isArray(b)
+      ? { location: locs[b[0]], code: codes[b[0]] || null, price: b[1], date: longDate(b[2]) }
+      : { location: b.location, code: b.code || null, price: b.price, date: b.date || null }));
   const systemOf = (loc) => (String(loc).match(/\(([^)]+)\)\s*$/) || [, "?"])[1];
 
   const KINDS = {
@@ -206,5 +209,5 @@
     return `${loc}?q=${encodeURIComponent([shop, place].filter(Boolean).map((x) => `"${x}"`).join(" "))}`;
   }
 
-  window.Dash = { esc, fmt, short, SITE, siteHref, loadAll, buildGoals, activityRates, shopHref, systemOf, KINDS };
+  window.Dash = { esc, fmt, short, SITE, siteHref, loadAll, buildGoals, activityRates, shopHref, systemOf, shopRows, KINDS };
 })();
