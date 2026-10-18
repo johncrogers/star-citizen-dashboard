@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Star Citizen Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <div class="title-row">
+        <h1>Dashboard</h1>
+        <nav class="site-links" id="siteLinks" aria-label="Other sites"></nav>
+      </div>
+      <p class="meta" id="meta">Loading…</p>
+    </div>
+  </header>
+
+  <nav class="scope" id="scope" aria-label="View"></nav>
+  <div class="missing" id="missing" hidden></div>
+  <main class="dash-view" id="view"><p class="muted">Loading the other apps' data…</p></main>
+
+  <script src="site.js"></script>
+  <script src="common.js"></script>
+  <script src="goals.js"></script>
+  <script src="shopping.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
