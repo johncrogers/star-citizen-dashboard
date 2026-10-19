@@ -1,7 +1,7 @@
-# Star Citizen Dashboard
+# Dashboard has moved
 
-Static site published by a deploy script from a private repo. Don't edit files here:
-every deploy replaces them.
+This site now redirects to https://star-citizen.john-clinton-rogers.workers.dev/dashboard/, where every Star Citizen tool lives. The
+redirect keeps the page, the query and the part after #, and carries your saved data across once.
 
-Reads its data from the ships, items, ship components and contracts sites. Their sources: [Star Citizen Wiki API](https://api.star-citizen.wiki), [UEX](https://uexcorp.space), [SCMDB](https://scmdb.net) and [cstone](https://finder.cstone.space). Images: [starcitizen.tools](https://starcitizen.tools).
+Published by a script from a private repo. Don't edit files here.
 Star Citizen is a trademark of Cloud Imperium Rights LLC. This is an unofficial fan tool.
