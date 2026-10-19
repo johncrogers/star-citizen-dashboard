@@ -36,10 +36,12 @@
       document.head.appendChild(s);
     });
 
-  async function loadAll(progress) {
+  // `only` (optional): the app ids to load, e.g. ["ships", "items", "components"]. The locations
+  // app loads this file too, for its Wishlist tab, and skips the contracts.
+  async function loadAll(progress, only) {
     const data = {};
     const missing = [];
-    for (const src of SOURCES) {
+    for (const src of SOURCES.filter((s) => !only || only.includes(s.id))) {
       const base = baseOf(src.id);
       progress(src.id);
       try {
